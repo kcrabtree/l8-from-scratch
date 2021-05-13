@@ -24,7 +24,9 @@ Route::get('posts/{post}', function ($uriSlug) {
         return redirect('/');
     }
 
-    return view('post', [
-        'post' => file_get_contents($path)
-    ]);
+    $post = cache()->remember("posts.{$uriSlug}", now()->addHour(), function () use ($path) {
+        return file_get_contents($path);
+    });
+
+    return view('post', ['post' => $post]);
 })->where('post', '[A-z_\-]+');
