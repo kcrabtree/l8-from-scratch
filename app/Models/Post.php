@@ -22,25 +22,18 @@ class Post {
     }
 
     public static function all() {
-        return collect(File::files(resource_path('posts')))
+        return cache()->rememberForever('posts.all', function() {
+            return collect(File::files(resource_path('posts')))
             ->map(function($file) {
                 return YamlFrontMatter::parseFile($file);
             })
             ->map(function($doc) {
                 return new Post($doc->title, $doc->publishDate, $doc->excerpt, $doc->body(), $doc->slug);
-            });
+            })->sortByDesc('publishDate');
+        });
     }
 
     public static function find($uriSlug) {
         return static::all()->firstWhere('slug', $uriSlug);
-        // $path = resource_path("posts/{$uriSlug}.html");
-
-        // if(!file_exists($path)) {
-        //     throw new ModelNotFoundException();
-        // }
-
-        // return cache()->remember("posts.{$uriSlug}", now()->addHour(), function () use ($path) {
-        //     return file_get_contents($path);
-        // });
     }
 }
