@@ -4,7 +4,7 @@
             {{$post->title}}
         </h1>
         <div>
-            {!! $post->body !!}
+            <p>{!! $post->body !!}</p>
         </div>
     </article>
     
