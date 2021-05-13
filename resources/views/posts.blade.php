@@ -9,7 +9,7 @@
     </head>
     <body>
         <article>
-            <h1><a href="/post">First Post</a></h1>
+            <h1><a href="/posts/first-post">First Post</a></h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -23,7 +23,7 @@
         </article>
 
         <article>
-            <h1><a href="/post">Second Post</a></h1>
+            <h1><a href="/posts/second-post">Second Post</a></h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -37,7 +37,7 @@
         </article>
 
         <article>
-            <h1><a href="/post">Third Post</a></h1>
+            <h1><a href="/posts/third-post">Third Post</a></h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. 
