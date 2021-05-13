@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('posts');
 });
+
+Route::get('post', function () {
+    $post = file_get_contents(__DIR__ . '/../resources/posts/first-post.html');
+    return view('post', [
+        'post' => $post
+    ]);
+});
